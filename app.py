@@ -16,7 +16,7 @@ conductivity = st.number_input("Conductivity", format="%.2f")
 organic_carbon = st.number_input("Organic Carbon", format="%.2f")
 trihalomethanes = st.number_input("Trihalomethanes", format="%.2f")
 turbidity = st.number_input("Turbidity", format="%.2f")
-model = joblib.load("modele.joblib")
+model = joblib.load("modele_voting.joblib")
 
 if st.button("Prédire"):
     features = np.array([[entier1, entier2, entier3, entier4, cat1_encoded, cat2_encoded, fl]])
