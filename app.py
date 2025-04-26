@@ -16,7 +16,7 @@ sulfate = st.number_input("Sulfate", format="%.2f")
 model = joblib.load("modele_voting.joblib")
 
 if st.button("Prédire"):
-    features = np.array([[entier1, entier2, entier3, entier4, cat1_encoded, cat2_encoded, fl]])
+    #features = np.array([[entier1, entier2, entier3, entier4, cat1_encoded, cat2_encoded, fl]])
 #ph', 'Hardness', 'Solids', 'Chloramines', 'Sulfate']    
 # Création du dataframe à partir des inputs
     data = pd.DataFrame({
