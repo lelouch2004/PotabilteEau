@@ -5,10 +5,7 @@ from sklearn.compose import ColumnTransformer
 import pandas as pd
 
 def preprocessing(data):
-    num_features = [
-        'ph', 'Hardness', 'Solids', 'Chloramines', 'Sulfate',
-        'Conductivity', 'Organic_carbon', 'Trihalomethanes', 'Turbidity'
-    ]
+    num_features = data.columns
     
     num_transformer = Pipeline([
         ("imputer", SimpleImputer(strategy='mean')),
