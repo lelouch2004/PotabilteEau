@@ -12,26 +12,20 @@ hardness = st.number_input("Hardness", format="%.2f")
 solids = st.number_input("Solids", format="%.2f")
 chloramines = st.number_input("Chloramines", format="%.2f")
 sulfate = st.number_input("Sulfate", format="%.2f")
-conductivity = st.number_input("Conductivity", format="%.2f")
-organic_carbon = st.number_input("Organic Carbon", format="%.2f")
-trihalomethanes = st.number_input("Trihalomethanes", format="%.2f")
-turbidity = st.number_input("Turbidity", format="%.2f")
+
 model = joblib.load("modele_voting.joblib")
 
 if st.button("Prédire"):
     features = np.array([[entier1, entier2, entier3, entier4, cat1_encoded, cat2_encoded, fl]])
-    
+#ph', 'Hardness', 'Solids', 'Chloramines', 'Sulfate']    
 # Création du dataframe à partir des inputs
     data = pd.DataFrame({
     'ph': [ph],
     'Hardness': [hardness],
     'Solids': [solids],
     'Chloramines': [chloramines],
-    'Sulfate': [sulfate],
-    'Conductivity': [conductivity],
-    'Organic_carbon': [organic_carbon],
-    'Trihalomethanes': [trihalomethanes],
-    'Turbidity': [turbidity]
+    'Sulfate': [sulfate]
+    
     })
 
     data = preprocessing(data)
